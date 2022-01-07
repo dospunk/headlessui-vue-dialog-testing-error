@@ -7,6 +7,7 @@ beforeEach(() => {
   setupIntersectionObserverMock();
 });
 
+//this will fail
 test("Can open HelloWorld with teleport unstubbed", async () => {
   const wrapper = mount(HelloWorld);
   await wrapper.find("#open-button").trigger("click");
@@ -15,6 +16,7 @@ test("Can open HelloWorld with teleport unstubbed", async () => {
   );
 });
 
+//this will pass, but generate a ton of warnings about FocusTrap
 test("Can open HelloWorld with teleport stubbed", async () => {
   const wrapper = mount(HelloWorld, {
     global: {
